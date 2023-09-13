@@ -1,14 +1,13 @@
-import { thunderCart } from "../thunders/cart";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import { useKillua } from "killua";
 import productsData from "../resources/productsData";
+import { thunderCart } from "../thunders/cart";
 
 export default function Products() {
   const {
     reducers: thunderCartReducers,
     selectors: thunderCartSelectors,
-    isReadyInSsr: thunderCartIsReadyInSsr,
   } = useKillua(thunderCart);
 
   return (
@@ -36,28 +35,27 @@ export default function Products() {
                 <b>{item.title}</b>
                 <p className="text-default-600">${item.price}</p>
               </div>
-              {thunderCartIsReadyInSsr &&
-                (thunderCartSelectors.isInCart(item.id) ? (
-                  <Button
-                    size="md"
-                    color="danger"
-                    radius="sm"
-                    className="font-medium w-full h-12"
-                    onPress={() => thunderCartReducers.removeFromCart(item.id)}
-                  >
-                    Remove from cart
-                  </Button>
-                ) : (
-                  <Button
-                    size="md"
-                    color="success"
-                    radius="sm"
-                    className="font-medium w-full h-12"
-                    onPress={() => thunderCartReducers.addToCart(item)}
-                  >
-                    Add to cart
-                  </Button>
-                ))}
+              {thunderCartSelectors.isInCart(item.id) ? (
+                <Button
+                  size="md"
+                  color="danger"
+                  radius="sm"
+                  className="font-medium w-full h-12"
+                  onPress={() => thunderCartReducers.removeFromCart(item.id)}
+                >
+                  Remove from cart
+                </Button>
+              ) : (
+                <Button
+                  size="md"
+                  color="success"
+                  radius="sm"
+                  className="font-medium w-full h-12"
+                  onPress={() => thunderCartReducers.addToCart(item)}
+                >
+                  Add to cart
+                </Button>
+              )}
             </CardFooter>
           </Card>
         ))}
