@@ -30,7 +30,7 @@ export default function ModalYourCart({ ...props }) {
           className="fixed left-0 right-0 top-0 bottom-0"
         ></div>
         <div
-          className={`relative text-white flex w-[350px] rounded-xl bg-black px-3 py-2 sm:w-[450px] lg:w-auto`}
+          className={`relative text-white flex w-[330px] rounded-xl bg-black px-3 py-2 sm:w-[450px] lg:w-auto`}
         >
           <div className="w-full lg:w-[400px]">
             {/* head */}

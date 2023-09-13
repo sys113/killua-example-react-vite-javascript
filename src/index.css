@@ -21,3 +21,7 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
