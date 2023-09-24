@@ -12,7 +12,7 @@
   "dependencies": {
     "@nextui-org/react": "^2.1.12",
     "framer-motion": "^10.16.4",
-    "killua": "^0.1.0",
+    "killua": "^0.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
